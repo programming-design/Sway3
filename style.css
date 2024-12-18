@@ -1,0 +1,128 @@
+
+/* تنسيق عام للصفحة */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  color: #4CAF50;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.professor {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.professor:hover {
+  background-color: #e7e7e7;
+}
+
+.professor h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.time {
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background-color: #f1c40f;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .professor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .time {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+/* القوائم المنسدلة */
+.filter-bar {
+  background: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* تأثيرات تحميل النصوص */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
