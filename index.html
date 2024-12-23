@@ -10,7 +10,141 @@
     <link rel="stylesheet" href="style.css">
      <!-- إضافة خط يدعم العربية مثل Cairo -->
      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+     <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h3 {
+            text-align: center;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+        .dros {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .dros li {
+            margin-bottom: 15px;
+        }
+        .dros a {
+            display: block;
+            text-decoration: none;
+            background: linear-gradient(90deg, #007BFF, #00BFFF);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .dros a:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #0056b3, #008cbf);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 2px solid #007BFF;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+        }
+        .popup h3 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        .popup a {
+            display: inline-block;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            background-color: #f0eded;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .popup a:hover {
+            background-color: #d5d5d5;
+        }
+        .popup button {
+            background: #FF4D4D;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .popup button:hover {
+            background: #cc0000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+     <style>
+        
+        .dros {
+            list-style: none;
+            padding: 0;
+        }
+        .dros li {
+            margin-bottom: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .popup a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
      <style>
          body {
              font-family: 'Cairo', sans-serif; /* تغيير الخط إلى Cairo للغة العربية */
@@ -310,13 +444,21 @@
       <div>
         <h3>الدروس المسجلة</h3>
         <ul class="dros">
-          <li><a href="#">درس 1: التمييز</a></li>
-          <li><a href="#">درس 2:العدد  </a></li>
-          <li><a href="pdf/مهارة توسيع فكرة.pdf">درس 3: مهارة توسيع فكرة 
+          <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 1: التمييز</a></li>
+          <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 2:العدد  </a></li>
+          <li><a href="#" data-view="pdf/مهارة توسيع فكرة.pdf" data-pdf="pdf/مهارة توسيع فكرة.pdf">درس 3: مهارة توسيع فكرة 
         </a></li>
         </ul>
       </div>
-    </div>
+      <div class="overlay"></div>
+<div class="popup">
+    <h3>اختر الخيار المناسب</h3>
+    <a href="#" id="view-link" target="_blank">مشاهدة من داخل المتصفح</a>
+    <a href="#" id="download-link" download>تحميل PDF</a>
+    <button id="close-popup">إغلاق</button>
+</div>
+       
+   
 
     
         <!-- قسم اللغة العربية -->
@@ -349,20 +491,25 @@
          
   
   <!-- إضافة روابط الدروس المسجلة -->
-      <div>
-        <h3>الدروس المسجلة</h3>
-        <ul class="dros">
-          <li><a href="#">درس 1: </a></li>
-          <li><a href="#">درس 2: </a></li>
-          <li><a href="#">درس 3: </a></li>
-        </ul>
-      </div>
-    </div>
+  <div>
+    <h3>الدروس المسجلة</h3>
+    <ul class="dros">
+        <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 1: </a></li>
+        <li><a href="#" data-view="lesson2.html" data-pdf="lesson2.pdf">درس 2: </a></li>
+        <li><a href="#" data-view="lesson3.html" data-pdf="lesson3.pdf">درس 3: </a></li>
+    </ul>
+</div>
 
-        </div>
+<div class="overlay"></div>
+<div class="popup">
+    <h3>اختر الخيار المناسب</h3>
+    <a href="#" id="view-link" target="_blank">مشاهدة من داخل المتصفح</a>
+    <a href="#" id="download-link" download>تحميل PDF</a>
+    <button id="close-popup">إغلاق</button>
+</div>
+</div></div>
 
 
-       
 
     <!-- إنجازات المركز -->
     <div id="nomber" class="counter-section" data-aos="fade-up">
@@ -468,6 +615,78 @@
               alert("ستتم إضافة المزيد من التفاصيل قريباً.");
             });
           });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lessonLinks = document.querySelectorAll(".dros a");
+            const popup = document.querySelector(".popup");
+            const overlay = document.querySelector(".overlay");
+            const viewLink = document.getElementById("view-link");
+            const downloadLink = document.getElementById("download-link");
+            const closePopup = document.getElementById("close-popup");
+
+            lessonLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+
+                    const viewUrl = this.getAttribute("data-view");
+                    const pdfUrl = this.getAttribute("data-pdf");
+
+                    viewLink.href = viewUrl;
+                    downloadLink.href = pdfUrl;
+
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                });
+            });
+
+            closePopup.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+
+            overlay.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+        });
+    </script>
+
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lessonLinks = document.querySelectorAll(".dros a");
+            const popup = document.querySelector(".popup");
+            const overlay = document.querySelector(".overlay");
+            const viewLink = document.getElementById("view-link");
+            const downloadLink = document.getElementById("download-link");
+            const closePopup = document.getElementById("close-popup");
+
+            lessonLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+
+                    const viewUrl = this.getAttribute("data-view");
+                    const pdfUrl = this.getAttribute("data-pdf");
+
+                    viewLink.href = viewUrl;
+                    downloadLink.href = pdfUrl;
+
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                });
+            });
+
+            closePopup.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+
+            overlay.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+        });
     </script>
 </body>
 </html>
