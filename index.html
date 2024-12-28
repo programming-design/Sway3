@@ -337,7 +337,7 @@
 <body>
     <!-- الشريط العلوي -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><i class="fas fa-clock"></i> موقع اكتساب المعارف و دعمها</a>
+        <a class="navbar-brand" href="#"><i class="fas fa-graduation-cap"></i> موقع اكتساب المعارف و دعمها</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -410,78 +410,73 @@
         <p class="text-center">تواصل معنا عبر البريد: <strong>info@extra-time.com</strong></p>
     </div>-->
    
-    
     <div id="time" class="filter-bar">
-         <header>
-        <h1>توقيت الدراسة</h1>
-      </header>
+        <header>
+            <h1>الدروس المسجلة</h1>
+        </header>
         <label for="subject-filter">اختر القسم:</label>
         <select id="subject-filter">
-        <option value="all">جميع الأقسام</option>
-         <!--   <option value="math">الرياضيات</option>
-          <option value="english">اللغة الإنجليزية</option>-->
-          <option value="science">أولى بكالوريا علوم رياضية و تجريبية</option>
-          <option value="arabic">الثانية بكالوريا آداب و علوم إنسانية</option>
-          
+            <option value="all">جميع الأقسام</option>
+            <option value="science">أولى بكالوريا علوم رياضية وتجريبية</option>
+            <option value="arabic">الثانية بكالوريا آداب وعلوم إنسانية</option>
         </select>
-      </div>
+    </div>
     
-      <div class="container">
-    
-       
-    
+    <div class="container">
         <!-- قسم العلوم -->
         <div class="section fade-in" id="science">
-        
-          <!-- إضافة روابط الدروس المسجلة -->
-      <div>
-        <h3>الدروس المسجلة</h3>
-        <ul class="dros">
-          <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 1: التمييز</a></li>
-          <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 2:العدد  </a></li>
-          <li><a href="#" data-view="pdf/مهارة توسيع فكرة.pdf" data-pdf="pdf/مهارة توسيع فكرة.pdf">درس 3: مهارة توسيع فكرة 
-        </a></li>
-        </ul>
-      </div>
-      <div class="overlay"></div>
-<div class="popup">
-    <h3>اختر الخيار المناسب</h3>
-    <a href="#" id="view-link" target="_blank">مشاهدة من داخل المتصفح</a>
-    <a href="#" id="download-link" download>تحميل PDF</a>
-    <button id="close-popup">إغلاق</button>
-</div>
-       
-   
-</div>
-
+            <h3>أولى بكالوريا علوم رياضية وتجريبية</h3>
+            <ul class="dros">
+                <li>
+                    <a href="lesson1.html" data-view="lesson1.html" data-pdf="lesson1.pdf">
+                        درس 1: التمييز
+                    </a>
+                </li>
+                <li>
+                    <a href="lesson2.html" data-view="lesson2.html" data-pdf="lesson2.pdf">
+                        درس 2: العدد
+                    </a>
+                </li>
+                <li>
+                    <a href="pdf/مهارة توسيع فكرة.pdf" data-view="pdf/مهارة توسيع فكرة.pdf" data-pdf="pdf/مهارة توسيع فكرة.pdf">
+                        درس 3: مهارة توسيع فكرة
+                    </a>
+                </li>
+            </ul>
+        </div>
     
         <!-- قسم اللغة العربية -->
         <div class="section fade-in" id="arabic">
-           
-        
-  <!-- إضافة روابط الدروس المسجلة -->
- 
-  <div>
-    <h3>الدروس المسجلة</h3>
-    <ul class="dros">
-      <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 1: </a></li>
-      <li><a href="#" data-view="lesson1.html" data-pdf="lesson1.pdf">درس 2:  </a></li>
-      <li><a href="#" data-view="pdf/مهارة توسيع فكرة.pdf" data-pdf="pdf/مهارة توسيع فكرة.pdf">درس 3:    
-    </a></li>
-    </ul>
-  </div></div>
-</div>
-  <div class="overlay"></div>
-<div class="popup">
-<h3>اختر الخيار المناسب</h3>
-<a href="#" id="view-link" target="_blank">مشاهدة من داخل المتصفح</a>
-<a href="#" id="download-link" download>تحميل PDF</a>
-<button id="close-popup">إغلاق</button>
-</div>
-   
-</div>
-
-</div></div>
+            <h3>الثانية بكالوريا آداب وعلوم إنسانية</h3>
+            <ul class="dros">
+                <li>
+                    <a href="lesson1_ar.html" data-view="lesson1_ar.html" data-pdf="lesson1_ar.pdf">
+                        درس 1: النحو
+                    </a>
+                </li>
+                <li>
+                    <a href="lesson2_ar.html" data-view="lesson2_ar.html" data-pdf="lesson2_ar.pdf">
+                        درس 2: البلاغة
+                    </a>
+                </li>
+                <li>
+                    <a href="pdf/مهارة_التعبير_الكتابي.pdf" data-view="pdf/مهارة_التعبير_الكتابي.pdf" data-pdf="pdf/مهارة_التعبير_الكتابي.pdf">
+                        درس 3: مهارة التعبير الكتابي
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- نافذة منبثقة لاختيار المشاهدة أو التحميل -->
+    <div class="overlay"></div>
+    <div class="popup">
+        <h3>اختر الخيار المناسب</h3>
+        <a href="#" id="view-link" target="_blank">مشاهدة من داخل المتصفح</a>
+        <a href="#" id="download-link" download>تحميل PDF</a>
+        <button id="close-popup">إغلاق</button>
+    </div>
+    
 
   
   
@@ -499,11 +494,14 @@
     <!-- زر العودة للأعلى -->
     <div class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
 
+<!-- الفوتر -->
+<footer style="text-align: center; padding: 10px; background-color: #4d9eee; border-top: 1px solid #0a6fd5;">
+    <div>
+        <img src="logo.png" alt="شعار الموقع" style="width: 50px; height: 50px; margin-bottom: 5px;">
+    </div>
+    <p>&copy; 2025 موقع اكتساب المعارف ودعمها - جميع الحقوق محفوظة</p>
+</footer>
 
-    <!-- الفوتر -->
-    <footer>
-        <p>&copy; 2025 موقع اكتساب المعارف و دعمها- جميع الحقوق محفوظة</p>
-    </footer>
 
     <!-- مكتبات الجافاسكربت -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
